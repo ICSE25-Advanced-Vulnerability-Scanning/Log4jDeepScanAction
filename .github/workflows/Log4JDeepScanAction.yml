@@ -27,4 +27,4 @@ jobs:
 
     - name: Run Log4j Scanner
       run: |
-        python script.py ${{ github.workspace }}
+        python main.py ${{ github.workspace }}
