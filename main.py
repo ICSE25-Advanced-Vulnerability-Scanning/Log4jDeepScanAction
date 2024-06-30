@@ -137,7 +137,7 @@ def check_log4j_vulnerabilities_in_directory(directory_path):
         print("No vulnerabilities found.")
         return
 
-    # Sort by CVE score
+   # Sort by CVE score
     sorted_vulnerabilities = sorted(
         all_vulnerabilities,
         key=lambda x: max(v[2] for v in x[1]),
