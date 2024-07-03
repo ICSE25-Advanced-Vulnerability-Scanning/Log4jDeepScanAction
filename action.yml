@@ -19,8 +19,9 @@ runs:
       shell: bash
 
     - name: Run Log4j Scanner
-      run: |
-        python main.py ${{ inputs.directory }}
+  runs:
+  using: 'python'
+  main: 'main.py'
       shell: bash
 branding:
   icon: 'shield'
