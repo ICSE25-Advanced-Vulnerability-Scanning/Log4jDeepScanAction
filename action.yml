@@ -20,7 +20,7 @@ runs:
 
     - name: Run Log4j Scanner
       run: |
-        python main.py ${{ inputs.directory }}
+        python /github/workspace/main.py ${{ inputs.directory }}
       shell: bash
 branding:
   icon: 'shield'
