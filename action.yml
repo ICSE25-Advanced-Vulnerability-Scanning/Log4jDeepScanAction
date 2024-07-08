@@ -10,8 +10,6 @@ runs:
   steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-          path: log4j-deep-scan-action  # Path to clone the repository
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -25,7 +23,6 @@ runs:
 
     - name: Run Log4j Scanner
         run: |
-         cd log4j-deep-scan-action
         python src/main.py ${{ inputs.directory }}
       shell: bash
 branding:
