@@ -13,7 +13,9 @@ runs:
       with:
         repository: UMCSResearchLog/Log4jDeepScanAction
         path: log4j-deep-scan-action  # Path to clone the repository
-
+    - name: Get directory
+      run: ls
+      
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
