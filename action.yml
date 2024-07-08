@@ -10,10 +10,10 @@ runs:
   steps:
     - name: Checkout Log4jDeepScanAction
       uses: actions/checkout@v2
-        
-    - name: Get directory
-      run: ls
-      shell: bash
+      with:
+        repository: UMCSResearchLog/Log4jDeepScanAction
+        path: log4j-deep-scan-action  # Path to clone the repository
+      
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -25,7 +25,8 @@ runs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
       shell: bash
-
+    -name: run ls
+      run: ls
     - name: Run Log4j Scanner
       run: |
         cd log4j-deep-scan-action/src
