@@ -10,9 +10,6 @@ runs:
   steps:
     - name: Checkout Log4jDeepScanAction
       uses: actions/checkout@v2
-      with:
-        repository: UMCSResearchLog/Log4jDeepScanAction
-        path: log4j-deep-scan-action  # Path to clone the repository
         
     - name: Get directory
       run: ls
