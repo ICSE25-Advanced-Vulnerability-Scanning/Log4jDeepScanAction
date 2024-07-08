@@ -27,6 +27,7 @@ runs:
       shell: bash
     - name: run ls
       run: ls
+      shell: bash
     - name: Run Log4j Scanner
       run: |
         cd log4j-deep-scan-action/src
