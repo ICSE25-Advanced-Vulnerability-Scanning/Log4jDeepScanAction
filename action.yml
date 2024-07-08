@@ -1,5 +1,5 @@
-name: 'Log4j Vulnerability Scanner'
-description: 'Scan a directory for Log4j vulnerabilities.'
+name: Log4j Vulnerability Scanner
+description: Scan a directory for Log4j vulnerabilities.
 inputs:
   directory:
     description: 'The directory to scan for vulnerabilities.'
@@ -8,8 +8,11 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Checkout repository
+    - name: Checkout Log4jDeepScanAction
       uses: actions/checkout@v2
+      with:
+        repository: UMCSResearchLog/Log4jDeepScanAction
+        path: log4j-deep-scan-action  # Path to clone the repository
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -18,12 +21,14 @@ runs:
 
     - name: Install dependencies
       run: |
+        cd log4j-deep-scan-action
         python -m pip install --upgrade pip
-      shell: bash
+        pip install -r requirements.txt
 
     - name: Run Log4j Scanner
       run: |
-        python ${{ github.workspace }}/src/main.py ${{ inputs.directory }}
+        cd log4j-deep-scan-action/src
+        python main.py ${{ inputs.directory }}
       shell: bash
 branding:
   icon: 'shield'
