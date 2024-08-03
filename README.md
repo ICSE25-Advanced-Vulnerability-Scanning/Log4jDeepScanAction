@@ -11,7 +11,7 @@
 
 3. **Development**:
    
-git clone https://github.com/UMCSResearchLog/Log4jDeepScanAction.git
+git clone https://github.com/ICSE25-Advanced-Vulnerability-Scanning/Log4jDeepScanAction.git
 cd Log4jDeepScanAction
 
 # To create a virtual environment and install dependencies:
