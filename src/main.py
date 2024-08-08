@@ -29,6 +29,14 @@ def check_log4j_vulnerabilities_in_file(content):
             "pattern": re.compile(r'log4j\-1\.[0-9]+\.[0-9]+'),
             "CVE": ["CVE-2019-17571", "CVE-2020-9488", "CVE-2021-4104", "CVE-2022-23302", "CVE-2022-23305", "CVE-2022-23307"]
         },
+        "JndiLookup.class found, possible vulnerability": {
+            "pattern": re.compile(r'JndiLookup\.class'),
+            "CVE": ["CVE-2021-44228"]
+        },
+        "JNDI lookup pattern found, possible vulnerability": {
+            "pattern": re.compile(r'\$\{jndi:'),
+            "CVE": ["CVE-2021-44228"]
+        },
         "SocketServer found, possible vulnerability": {
             "pattern": re.compile(r'org\.apache\.log4j\.net\.SocketServer'),
             "CVE": ["CVE-2019-17571"]
